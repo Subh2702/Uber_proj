@@ -10,4 +10,11 @@ router.post('/register', [
     userController.registerUser
 )
 
+router.post('/login', [
+    body('email').isEmail(),
+    body('password').isLength({min: 6})
+], 
+    userController.loginUser
+)
+
 module.exports = router;
