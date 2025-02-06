@@ -30,10 +30,13 @@ module.exports.loginUser = async (req, res) => {
     if(!user){
         return res.status(401).json({message: 'invalid email or password'});
     }
-    const validPassword = await userModel.comparePassword(password, user.password);
+    const validPassword = await user.comparePassword(password);
     if(!validPassword){
         return res.status(401).json({message: 'Invalid email or password'});
     }
     const token = user.generateAuthToken();
     res.status(200).json({token,user});
+}
+module.exports.getUserProfile = async (req, res) => {
+    res.status(200).json(req.user);
 }
