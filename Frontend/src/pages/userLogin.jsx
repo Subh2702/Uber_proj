@@ -63,7 +63,7 @@ const UserLogin = () => {
               type="submit"
               className="w-full bg-black text-white py-2 rounded-md hover:bg-gray-800 transition duration-200"
             >
-              Login
+              Create Account
             </button>
             <div className="flex justify-between items-center text-sm text-gray-200">
               <p>New here?</p>
